@@ -18,18 +18,17 @@ sub About {
     my $VERSION = PetaPerl::Environment::Version();
     my $DATE    = PetaPerl::Environment::Date();
 
-
+    $STDOUT_FLAG=(-e $FILEHANDLE) ? 1 : 0;
     PetaPerl::Log::Status($FILEHANDLE,1,"PetaDock - gridPrep");
-      PetaPerl::Log::Log($FILEHANDLE,1,"Run By:\t\t".$ENV{'USER'});
-      PetaPerl::Log::Log($FILEHANDLE,1,"Date:\t\t$DATE");;
-      PetaPerl::Log::Log($FILEHANDLE,1,"System:\t\t$SYSTEM ($IP)");
-      PetaPerl::Log::Log($FILEHANDLE,1,"Pwd:\t\t$PWD");
-      PetaPerl::Log::Log($FILEHANDLE,1,"Version:\t$VERSION");
-      PetaPerl::Log::Log($FILEHANDLE,1,"Command:\t$CMD");
-      
-      PetaPerl::Log::Status($FILEHANDLE,1,"Working Paths");
-      PetaPerl::Log::Log($FILEHANDLE,1,"PWD:\t$PWD");
-      
+    PetaPerl::Log::Log($FILEHANDLE,1,"Run By:\t\t".$ENV{'USER'});
+    PetaPerl::Log::Log($FILEHANDLE,1,"Date:\t\t$DATE");;
+    PetaPerl::Log::Log($FILEHANDLE,1,"System:\t\t$SYSTEM ($IP)");
+    PetaPerl::Log::Log($FILEHANDLE,1,"Pwd:\t\t$PWD");
+    PetaPerl::Log::Log($FILEHANDLE,1,"Version:\t$VERSION");
+    PetaPerl::Log::Log($FILEHANDLE,1,"Command:\t$CMD");
+    
+    PetaPerl::Log::Status($FILEHANDLE,1,"Working Paths");
+    PetaPerl::Log::Log($FILEHANDLE,1,"PWD:\t$PWD");  
 }
 ################################################################
 ################################################################
