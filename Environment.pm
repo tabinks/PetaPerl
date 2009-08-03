@@ -12,15 +12,22 @@ our $_PETADOCK_TEMPLATES="/home/abinkows/bin/PetaDock/templates/";
 our $_PETADOCK_BIN="/home/abinkows/bin/PetaDock/bin/";
 our $_ZINC_HOME="/pvfs-surveyor/abinkows/Libraries/zinc8/";
 
+
 ################################################################
 # WhatIsMyIp
 #    
 #
 ################################################################
-
 sub Date {
     my ($format) = @_;
     my $DATE = `date +%Y%m%d-%T`;
+    chomp($DATE);
+    return $DATE;
+}
+
+sub DateSimple {
+    my ($format) = @_;
+    my $DATE = `date +%Y%m%d`;
     chomp($DATE);
     return $DATE;
 }
