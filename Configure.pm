@@ -9,7 +9,8 @@ use vars       qw(%CFG %CMD);
 
 %CFG   = ( "VERBOSE" => 1,
            "LOCAL_CAST" => "/net/Xtbinkowski/sling/cast",
-           "LOCAL_PDB" => "/net/Xtbinkowski/sling/pdb",
+           "LOCAL_CAST" => "/Volumes/Xtbinkowski/sling/cast",
+           "LOCAL_PDB" => "/Volumes/Xtbinkowski/sling/pdb",
            "LOCAL_XML" => "/net/Xtbinkowski/sling/pdb",
 
            #"LOCAL_CONTRIB" => "/net/Xtbinkowski/sling/contrib",

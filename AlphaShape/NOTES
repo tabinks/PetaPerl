@@ -1,0 +1,4 @@
+The Gaussian package  is an attempt at a 2nd  order derivaitive of the
+gaussian volume  formula.  It doesn't  work really well, but  it's not
+completely wrong  either.  It is  most likely being dropped  for alpha
+shape volume calculation.

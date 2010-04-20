@@ -4,7 +4,7 @@ use base 'Exporter';
 use Socket;
 use Sys::Hostname;
 
-@EXPORT = qw(Date WhatIsMyIp Version System EnvironmentDump
+@EXPORT = qw(Date WhatIsMyIp Version System EnvironmentDump Initialize
 	     $_PETADOCK_HOME $_PETADOCK_SCRIPTS $_PETADOCK_TEMPLATES $_PETADOCK_BIN 
 	     $_ZINC_HOME %PETAPERL_ENV);
 
@@ -18,15 +18,23 @@ our $_ZINC_HOME="/pvfs-surveyor/abinkows/Libraries/zinc8/";
 
 our %PETAPERL_ENV = ("OSTYPE" => $ENV{"OSTYPE"},
 		     "VENDOR" => $ENV{"VENDOR"},
-		     "USER"   => $ENV{"USER"}
+		     "USER"   => $ENV{"USER"},
+		     "PETADOCK_PATH" => $ENV{"PETADOCK_PATH"},
+		     "PETASURFACE_PATH" => $ENV{"PETASURFACE_PATH"}
     );
 
-sub _Initialize {
+sub Initialize {
     Date();
     DateSimple();
     Version();
     System();
     WhatIsMyIp();
+    if($PETAPERL_ENV{"OSTYPE"} eq "darwin") {
+	$PETAPERL_ENV{"DOCK_BIN"} = $PETAPERL_ENV{"PETADOCK_PATH"}."/bin/dock6-osx/bin/";
+    } else {
+	$PETAPERL_ENV{"DOCK_BIN"} = $PETAPERL_ENV{"PETADOCK_PATH"}."/bin/dock6/bin/";
+    }
+
 }
 ################################################################
 # WhatIsMyIp
@@ -111,7 +119,7 @@ sub WhatIsMyIp {
 }
 
 sub EnvironmentDump {
-    _Initialize();
+    Initialize();
     foreach $k (sort keys %PETAPERL_ENV) {
 	print "$k\t\t\t=>\t$PETAPERL_ENV{$k}";
 	print "\n";

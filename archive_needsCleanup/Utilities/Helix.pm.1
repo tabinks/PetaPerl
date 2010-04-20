@@ -1,0 +1,51 @@
+package Tab::Helix; 
+
+use strict;
+#use Tab::Parser;
+#use Tab::AminoAcids;
+
+require Exporter;
+use vars       qw($VERSION @ISA @EXPORT);
+
+# set the version for version checking
+$VERSION     = 0.01;
+
+@ISA         = qw(Exporter);
+@EXPORT      = qw(&Build);
+
+#use vars       qw(%results @pdbfield $record $counter $res_num %amino $chain);
+
+sub Build {
+#    open(PDB, "< $_[0]") || die "Tab::Helix::Build Error:\n
+     #                            Could not open $_[0]\n";
+#    while(<PDB>) {
+#	if ($_ =~ /^ATOM|^HETATM/) {
+#	    &Tab::Parser::AtomRecord($_); 	
+#	    if ($pdbfield[7] ne $chain) { # New helix
+#		$chain = $pdbfield[7];
+#		print "\n>Helix $chain\n";
+#        	$counter = 0;
+#	    } else { # Same helix
+#		if ($counter==79) { # 80 spaces - break
+	#	    if ($pdbfield[8] ne $res_num) { # New Res #       
+#			$res_num = $pdbfield[8];
+#			print "$amino{$pdbfield[5]}\n";
+#			$counter=0;
+#		    }
+#		} else { # Same line
+	#	    if ($pdbfield[8] ne $res_num) { # New 
+#			$res_num = $pdbfield[8];
+#			print "$amino{$pdbfield[5]}";
+#			$counter++;
+#		    }
+#		}
+#	    }
+#	}
+#    }    
+#close PDB;
+    print "hi";
+}
+
+END { }      
+
+1;

@@ -1,0 +1,28 @@
+package Tab::File;
+
+require Exporter;
+use vars       qw($VERSION @ISA @EXPORT);
+
+# set the version for version checking
+$VERSION     = 0.01;
+
+@ISA         = qw(Exporter);
+@EXPORT      = qw(&LoadFile);
+
+use vars       qw(@tmp);
+
+sub LoadFile {
+    my @data;
+
+    open(FILE, $_[0]) || die "Couldn't open $file! : $!\n";
+    while(<FILE>) {
+	chomp;
+	push @data, $_;
+    }
+    close FILE;
+    return @data;
+}
+
+END { }      
+
+1;
